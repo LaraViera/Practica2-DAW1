@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 2 DAW1</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Nuevos-Comentarios.css">
+    <link rel="stylesheet" href="assets/css/perfil-navBar-11.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/ZYVKRY.css">
+    <link rel="stylesheet" href="assets/css/perfil-navBar.css">
+    <link rel="stylesheet" href="assets/css/ratingbox.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+</head>
+
+<body>
+    <div class="modal fade" role="dialog" tabindex="-1" id="miModal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Acceda a su cuenta</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" name="login_form"><input class="form-control" type="text" placeholder="Usuario" id="user"><input class="form-control" type="password" placeholder="Contraseña" id="passwd"><a href="profile.html"><button class="btn btn-default" type="button">Entrar </button></a>
+                        <p>
+                        <a href="#">¿Olvidó la contraseña?</a></p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p>¿Aún no te has registrado? </p><button class="btn btn-primary" type="button">Hazlo aquí</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modalFormComentario">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Añade tu Comentario</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="statusComment"> </p>
+                    <form role="form">
+                        <div id="modalComment" class="form-group"><label for="inputComment">Comentario </label><input class="form-control" type="text" id="inputComment" placeholder="Introduce aquí tu comentario"></div>
+                        <div id="ratingModalComentario" class="form-group" enable="true"><label for="inputRating">Tu Puntuación:</label>
+                            <div id="rating1" class="rating1" value="3" style="/*background-color:rgba(255,165,0,0);*/" enable="true;"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Descartar </button><button class="btn btn-primary submitBtn" type="submit" title="Click Aquí" onclick="submitCommentForm()">Publicar </button></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="navegation" role="navigation">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand" href="index.html" title="Click Aquí"><img src="assets/img/Logo_render.png" id="logo"><strong>TuMisDocumentos</strong> </a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <form class="navbar-form navbar-left" id="form-search" role="search">
+                        <div class="form-group"><input class="form-control input-sm" type="search" placeholder="¿Qué buscas?"><button class="btn btn-default btn-xs" type="submit"> <i class="glyphicon glyphicon-search"></i></button></div>
+                    </form><button class="btn btn-default navbar-btn navbar-right" type="button" id="login-Button" data-toggle="modal" data-target="#miModal" title="Click Aquí">Login </button>
+                    <ul class="nav navbar-nav navbar-right" id="nav_dropdowns">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Categorias <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a href="#">Novela </a></li>
+                                <li role="presentation"><a href="#">Literatura Clásica</a></li>
+                                <li role="presentation"><a href="#">Manuales </a></li>
+                                <li role="presentation"><a href="#">Recursos</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" title="Click Aquí">Sobre Nosotros<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header" role="presentation">Contacto </li>
+                                <li role="presentation"><a href="contact.html">Contáctanos </a></li>
+                                <li class="divider" role="presentation"></li>
+                                <li class="dropdown-header" role="presentation">About Us</li>
+                                <li role="presentation"><a href="#">Conócenos </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+    </div>
+    </nav>
+    </div>
+    <div style="margin:60px;">
+        <section style="padding-top:11px;padding-right:12.5px;padding-bottom:12.5px;background-color:#f9ac5b;">
+            <div class="row" style="margin-top:2%;margin-right:-11px;margin-left:0px;">
+                <div class="col-md-3" style="margin-left:7%;"><img class="img-thumbnail" src="assets/img/Documentos/LaMusicaDelSilencio.jpg" data-bs-hover-animate="pulse" style="margin-top:17%;">
+                    <div id="rating" class="rating" value="3" style="/*background-color:rgba(255,165,0,0);*/"><label>Puntuación:</label></div>
+                </div>
+                <div class="col-md-7" style="padding-top:4%;">
+                    <div class="well" style="background-color:rgba(255,255,255,0.45);">
+                        <h3 class="text-nowrap text-center" style="font-size:24px;">Ficha Técnica</h3>
+                        <ul>
+                            <li><strong><em>Autor: </em></strong>PATRICK ROTHFUSS</li>
+                            <li><strong><em>Editorial: </em></strong>Rosa Dels Vents</li>
+                            <li><strong><em>Fecha de Publicación: </em></strong>Octubre<em> </em>2014</li>
+                            <li><strong><em>Género: </em></strong>Fantasía y ciencia ficción, Acción y aventuras</li>
+                            <li><strong><em>Resumen: </em></strong></li>
+                        </ul>
+                        <p>«<em>Al despertar, Auri supo que faltaban siete días. Sí, estaba segura. Él iría a visitarla al séptimo día.</em>» La Universidad, el bastión del conocimiento, atrae a las mentes más brillantes para aprender ciencias como la artificería
+                            y la alquimia. Pero bajo esos edificios y sus concurridas aulas existe un mundo en penumbra. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well" style="background-color:rgba(247,247,247,0.54);width:80%;margin-left:10%;">
+                        <h3 class="text-nowrap text-center" style="font-size:24px;">Comentarios </h3>
+                        <div class="panel panel-default" style="background-color:rgba(255,255,255,0);">
+                            <div class="panel-body" style="height:233px;">
+                                <ul class="list-group">
+                                    <li class="list-group-item" style="margin-bottom:6px;">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="media" style="overflow:visible;">
+                                                    <div class="media-left"><a><img class="img-circle img-rounded" src="assets/img/perfil3.jpg" style="width:40px;height:40px;"></a></div>
+                                                    <div class="media-body" style="overflow:visible;">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <p><a href="#">Jhon Snow</a> Lorem ipsum dolor sit amet. &lt;3
+                                                                    <br>
+<small class="text-muted">August 6, 2017 @ 10:35am </small></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item" style="margin-bottom:6px;">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="media" style="overflow:visible;">
+                                                    <div class="media-left"><a><img class="img-circle img-rounded" src="assets/img/perfil2.jpg" style="width:40px;height:40px;"></a></div>
+                                                    <div class="media-body" style="overflow:visible;">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <p><a href="#">Brennan Prill:</a> Maecenas quis nulla sed ante interdum convallis non sit amet dolor. Donec faucibus felis ac urna dignissim, sit amet consequat eros luctus
+                                                                    <br>
+<small class="text-muted">August 6, 2017 @ 10:35am </small></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul><a class="btn btn-info btn-xs" role="button" href="#" style="margin-left:82%;margin-bottom:2%;margin-top:-1.8%;" data-toggle="modal" data-target="#modalFormComentario" title="Click Aquí">Añadir Comentario</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12"><a href="#"><i class="fa fa-facebook fa-lg white-text mr-md-4" id="fb"></i> </a><a href="#"> <i class="fa fa-twitter fa-lg white-text mr-md-4" id="twitter"></i> </a><a href="#"> <i class="fa fa-google-plus fa-lg white-text mr-md-4" id="google"></i> </a>
+                    <a
+                        href="#"> <i class="fa fa-linkedin fa-lg white-text mr-md-4" id="linkedin"></i> </a><a href="#"> <i class="fa fa-instagram fa-lg white-text mr-md-4" id="instagram"></i> </a><a href="#"> <i class="fa fa-pinterest fa-lg white-text mr-md-4" id="pinterest"></i> </a></div>
+            </div>
+        </div>
+        <footer>
+            <div class="container fluid"><a href="#">© 2016 Copyright:&nbsp;www.AnEdyLara.com </a></div>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/ZYVKRY.js"></script>
+    <script src="assets/js/animatedNumber.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+    <script src="assets/js/jQuery-gRating-Enable.js"></script>
+    <script src="assets/js/jQuery-gRating.js"></script>
+    <script src="assets/js/jQuery-gRatingAux-1-Enable.js"></script>
+    <script src="assets/js/jQuery-gRatingAux-1.js"></script>
+    <script src="assets/js/submit_form.js"></script>
+</body>
+
+</html>

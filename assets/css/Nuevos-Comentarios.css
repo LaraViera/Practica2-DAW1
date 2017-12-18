@@ -1,0 +1,8 @@
+#perfilComent img, #img {
+  box-shadow:5px 2px 8px #888888;
+}
+
+.img-thumbnail.img-responsive {
+  position:relative;
+}
+
